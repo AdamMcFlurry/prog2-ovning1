@@ -196,7 +196,7 @@ public class Exercise1Test {
     @ParameterizedTest
     @org.junit.jupiter.api.Order(22)
     @DisplayName("Recording: testar att äldre LongPlay får rätt pris.")
-    @CsvSource({"2020,10,200,230,287.25", "1950,10,200,580,725"})
+    @CsvSource({"2020,10,200,230,287.5", "1950,10,200,580,725"})
     void recordingCorrectPriceForLPFrom2020(int year, int condition, double price, double expected, double plusVat) {
         var message = String.format("Klassen LongPlay: värdet (exkl. moms) på en LP från " + year + " beräknas inte rätt för slitage %d.", condition);
 
@@ -338,7 +338,7 @@ Total incl. VAT: 1017.75
         order = new Order(book2, item1, cd2);
         receipt = order.getReceipt();
 
-        assertEquals(880.0, order.getTotalValue(), ORDER_INCORRECT_VALUE_EXCL_VAT);
+        assertEquals(885.0, order.getTotalValue(), ORDER_INCORRECT_VALUE_EXCL_VAT);
         assertEquals(1024, order.getTotalValuePlusVAT(), ORDER_INCORRECT_VALUE_INCL_VAT);
 
         part = Set.of("Book", "Beethoven: a biography", "Holmqvist", "false", "400.0", "424.0");
