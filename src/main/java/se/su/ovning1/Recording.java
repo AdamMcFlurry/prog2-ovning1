@@ -1,6 +1,6 @@
 package se.su.ovning1;
 
-public abstract class Recording implements PriceableWithVAT25{
+public abstract class Recording implements PriceableWithVAT25 {
     protected String name;
     protected String artist;
     protected int year;
