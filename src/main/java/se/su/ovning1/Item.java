@@ -1,9 +1,9 @@
 package se.su.ovning1;
 
-public class Item implements Priceable {
-    private String name;
+public abstract class Item implements Priceable {
+    protected String name;
 
-    private Item(String name) {
+    protected Item(String name) {
         this.name = name;
     }
 
