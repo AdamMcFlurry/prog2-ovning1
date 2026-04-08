@@ -9,9 +9,11 @@ public class Order {
     //Konstruktorn
     public Order(Item... items) {
         this.orderNumber = ++counter;
-        for (Item item : items) {
-            this.items.add(item);
-        }
+        List<Item> itemsCollection = new ArrayList<>(List.of(items));
+        this.items.addAll(itemsCollection);
+        // for (Item item : items) {
+        //     this.items.add(item);
+        // }
     }
 
     //Metoder
