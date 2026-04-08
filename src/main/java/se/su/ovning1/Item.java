@@ -1,7 +1,7 @@
 package se.su.ovning1;
 
 public abstract class Item implements Priceable {
-    protected String name;
+    private final String name;
 
     protected Item(String name) {
         this.name = name;
@@ -10,6 +10,7 @@ public abstract class Item implements Priceable {
     public String getName() {
         return this.name;
     }
-}
 
-// add, commit, push
+    // @Override
+    // public abstract String toString();
+}

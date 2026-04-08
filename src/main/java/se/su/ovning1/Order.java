@@ -1,42 +1,48 @@
-package se.su.ovning1
+package se.su.ovning1;
+import java.util.*;
 
-public class Order extends Item {
-    private long orderNumber;
-    private long counter;
-    private List<Item> items;
-    //Konstruktorn
-    public Order(long orderNumber, long counter) {
-        this.orderNumber = orderNumber;
-        this.counter = counter;
-        this.items = new ArrayList<>();
-    }
-    //Metoder
-public String getReceipt() {
-    StringBuilder receipt = new StringBuilder();
-    receipt.append("Order Number: ").append(orderNumber).append("\n");
-    receipt.append("Counter: ").append(counter).append("\n");
-    receipt.append("Items:\n");
-    for (Item item : items) {
-        receipt.append("- ").append(item.getName()).append(": $").append(item.getPrice()).append("\n");
-    }
-    return receipt.toString();
-}
-
-public double getTotalValuePlusVAT() {
-    double total = 0.0;
-    for (Item item : items) {
-        total += item.getPrice();
-    }
-    return total; //här kan man behöva lägga till VAT men förstår ej hur.
-   
-}
-public double getTotalValue(){
-    double total = 0.0;
-    for (Item item : items) {
-        total += item.getPrice();
-    }
-    return total;
-}
-}
+public class Order {
+    private static long counter = 0;
+    private final long orderNumber;
+    private final ArrayList<Item> items = new ArrayList<>();;
     
+    //Konstruktorn
+    public Order(Item... items) {
+        this.orderNumber = ++counter;
+        for (Item item : items) {
+            this.items.add(item);
+        }
+    }
+
+    //Metoder
+    public String getReceipt() {
+        StringBuilder receipt = new StringBuilder();
+        receipt.append("Receipt for order #").append(orderNumber).append("\n");
+        receipt.append("-----------").append("\n");
+        for (Item item : items) {
+            receipt.append(item.toString()).append("\n");
+        }
+        receipt.append("Total excl. VAT: ").append(getTotalValue()).append("\n");
+        receipt.append("Total incl. VAT: ").append(getTotalValuePlusVAT()).append("\n");
+        receipt.append("-----------");
+        return receipt.toString();
+    }
+
+    public double getTotalValuePlusVAT() {
+        double total = 0.0;
+        for (Item item : items) {
+            total += item.getPriceWithVAT();
+        }
+        return total;
+    
+    }
+    public double getTotalValue(){
+        double total = 0.0;
+        for (Item item : items) {
+            total += item.getPrice();
+        }
+        return total;
+    }
+    }
+        
 
