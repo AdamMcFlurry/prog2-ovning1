@@ -10,7 +10,4 @@ public abstract class Item implements Priceable {
     public String getName() {
         return this.name;
     }
-
-    // @Override
-    // public abstract String toString();
 }

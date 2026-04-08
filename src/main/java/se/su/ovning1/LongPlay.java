@@ -14,7 +14,7 @@ public class LongPlay extends Recording {
 
     @Override
     public double getPrice() {
-       return (super.getPrice() + (2025 - 2020) * 5);
+       return (super.getPrice() + (2026 - year) * 5);
     }
 
 

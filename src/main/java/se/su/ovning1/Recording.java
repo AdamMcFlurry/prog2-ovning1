@@ -28,17 +28,21 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
 
     @Override
     public double getPrice() {
-        //return MATH.max10, price * condition / 10.0);
-        double conditionFactor = condition / 10.0;
-        double adjustedPrice = price * conditionFactor;
+        return Math.max(10, price * condition / 10.0);
+        // double conditionFactor = condition / 10.0;
+        // double adjustedPrice = price * conditionFactor;
 
-        if (adjustedPrice < 10) {
-            adjustedPrice = 10;
-        }
-        return adjustedPrice * 1.25;
+        // if (adjustedPrice < 10) {
+        //     adjustedPrice = 10;
+        // }
+        // return adjustedPrice * 1.25;
     }
 
-    public double getOriginalPrice() { return price; }
+    protected double getOriginalPrice() { return price; }
 
-    //toString
+    @Override
+    public String toString() {
+        return getType() + "{ name=" + getName() + "artist=" + artist + "year=" + year + "condition=" + condition + "original price=" + getOriginalPrice() + "price=" + getPrice() + "price+VAT=" + getPriceWithVAT() + "}";
+        // LP { name='Giant Steps', artist='John Coltrane', year=1959, condition=10, original price=100.0, price=425.0, price+VAT=531.25 }
+    }
 }

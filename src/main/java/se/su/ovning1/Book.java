@@ -14,7 +14,7 @@ public class Book extends Item implements PriceableWithVAT6 {
 
     @Override
     public double getPrice() {
-        return price;
+        return bound ? price * 1.3 : price;
     }
 
     @Override
