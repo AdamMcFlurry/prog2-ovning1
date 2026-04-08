@@ -25,7 +25,7 @@ public abstract class Recording implements PriceableWithVAT25 {
     }
     public abstract String getType();
 
-    public double getOriginalPrice() {
+    protected double getOriginalPrice() {
         return price;
     }
     public double getPrice() {
@@ -39,10 +39,8 @@ public abstract class Recording implements PriceableWithVAT25 {
     }
     @Override
     public String toString() {
-        return getType() + ": " + name +
-               " (" + artist + ", " + year + ")" +
-               ", condition: " + condition +
-               ", price: " + getPrice();
+        return getType() + "{ name=" + name + "artist=" + artist + "year=" + year + "condition=" + condition + "original price=" + getOriginalPrice() + "price=" + getPrice() + "price+VAT=" + getPriceWithVAT() + "}";
+        // LP { name='Giant Steps', artist='John Coltrane', year=1959, condition=10, original price=100.0, price=425.0, price+VAT=531.25 }
     }
-
 }
+
