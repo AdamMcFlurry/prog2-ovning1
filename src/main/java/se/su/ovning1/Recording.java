@@ -13,7 +13,6 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
         this.condition = condition;
         this.price = price;
     }
-    public abstract String getType();
 
     public String getArtist() {
         return artist;
@@ -42,3 +41,4 @@ public abstract class Recording extends Item implements PriceableWithVAT25 {
 
     //toString
 }
+
