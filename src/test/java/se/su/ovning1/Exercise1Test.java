@@ -27,8 +27,8 @@ public class Exercise1Test {
     private static final String ORDER_INCORRECT_VALUE_INCL_VAT = "Värdet inkl. moms stämmer inte.";
     private static final String BOUND_BOOK_INCORRECT_VALUE_EXCL_VAT = "Värdet (exkl. moms) på en inbunden bok beräknas inte rätt.";
     private static final String BOUND_BOOK_INCORRECT_VALUE_INCL_VAT = "Värdet (inkl. moms) på en inbunden bok beräknas inte rätt.";
-    private static final String UNBOUND_BOOK_INCORRECT_VALUE_EXCL_VAT = "Värdet (exkl. moms) på en icke inbunden bok beräknas inte rätt.";
-    private static final String UNBOUND_BOOK_INCORRECT_VALUE_INCL_VAT = "Värdet (inkl. moms) på en icke inbunden bok beräknas inte rätt.";
+    // private static final String UNBOUND_BOOK_INCORRECT_VALUE_EXCL_VAT = "Värdet (exkl. moms) på en icke inbunden bok beräknas inte rätt.";
+    // private static final String UNBOUND_BOOK_INCORRECT_VALUE_INCL_VAT = "Värdet (inkl. moms) på en icke inbunden bok beräknas inte rätt.";
     private static final String INCORRECT_VAT_VALUE = "Klassen har fått fel momsvärde.";
 
     @ParameterizedTest

@@ -11,9 +11,6 @@ public class Order {
         this.orderNumber = ++counter;
         List<Item> itemsCollection = new ArrayList<>(List.of(items));
         this.items.addAll(itemsCollection);
-        // for (Item item : items) {
-        //     this.items.add(item);
-        // }
     }
 
     //Metoder
